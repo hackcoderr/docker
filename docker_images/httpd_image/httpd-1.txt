@@ -1,0 +1,13 @@
+FROM centos:latest
+
+RUN yum install net-tools -y
+
+RUN yum install httpd -y
+
+RUN echo Hello World! >> /var/www/html/index.html
+
+EXPOSE 80
+
+ENTRYPOINT ["httpd"]
+
+CMD [ "-DFOREGROUND" ]
